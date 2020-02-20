@@ -22,6 +22,7 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public Company add(Company company) {
         String id = idWorker.nextId() + "";
+        company.setId(id);
         company.setCreateTime(new Date());
         company.setState(1); //启用
         company.setAuditState("0"); //待审核
@@ -30,23 +31,19 @@ public class CompanyServiceImpl implements CompanyService {
 
     }
 
-    @Override
     public Company update(Company company) {
-        return null;
+        return companyDao.save(company);
     }
 
-    @Override
     public Company findById(String id) {
-        return null;
+        return companyDao.findById(id).get();
     }
 
-    @Override
     public void deleteById(String id) {
-
+        companyDao.deleteById(id);
     }
 
-    @Override
     public List<Company> findAll() {
-        return null;
+        return companyDao.findAll();
     }
 }
