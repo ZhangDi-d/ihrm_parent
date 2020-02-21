@@ -50,7 +50,7 @@ public class CompanyController {
 
     @GetMapping("")
     public Result findAll() {
-        int i= 1/0;
+        int i = 1 / 0;
         List<Company> companyList = companyService.findAll();
         Result result = new Result(ResultCode.SUCCESS);
         result.setData(companyList);

@@ -30,7 +30,7 @@ public class TestJson {
     /**
      * 如果接口接受的时并不是以对象json化传参，那么要以String类型来接受，并自己解析，
      * 注意：：：不能自己定义对象，将类似 {"filedA":"A","filedB":"B","filedC":[{"innerfiledA":"1","innerfiledB":"2"}]}
-     *          转成自己定义的对象
+     * 转成自己定义的对象
      */
     @Test
     public void test2() {
@@ -42,10 +42,10 @@ public class TestJson {
         for (Map<String, Object> map : filedC) {
             String innerfiledA = (String) map.get("innerfiledA");
             String innerfiledB = (String) map.get("innerfiledB");
-            System.out.println("filedA= "+filedA);
-            System.out.println("filedB= "+filedB);
-            System.out.println("innerfiledA= "+innerfiledA);
-            System.out.println("innerfiledB= "+innerfiledB);
+            System.out.println("filedA= " + filedA);
+            System.out.println("filedB= " + filedB);
+            System.out.println("innerfiledA= " + innerfiledA);
+            System.out.println("innerfiledB= " + innerfiledB);
         }
     }
 }

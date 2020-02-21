@@ -1,7 +1,6 @@
 package com.ihrm.company.service;
 
 import com.ihrm.domain.company.Company;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

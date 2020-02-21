@@ -5,7 +5,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
 
 //spring的包扫描
 @SpringBootApplication(scanBasePackages = "com.ihrm")
@@ -17,7 +16,7 @@ public class CompanyApplication {
     }
 
     @Bean
-    public IdWorker idWorker(){
+    public IdWorker idWorker() {
         return new IdWorker();
     }
 }

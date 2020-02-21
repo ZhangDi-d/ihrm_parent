@@ -3,7 +3,6 @@ package com.ihrm.company;
 import com.ihrm.common.utils.IdWorker;
 import com.ihrm.company.dao.CompanyDao;
 import com.ihrm.domain.company.Company;
-import com.sun.xml.internal.bind.v2.model.core.ID;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

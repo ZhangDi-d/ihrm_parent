@@ -1,8 +1,5 @@
 package com.ihrm.common.entity;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -22,28 +19,28 @@ public class Result {
         this.message = code.message;
     }
 
-    public Result(ResultCode code,Object data) {
+    public Result(ResultCode code, Object data) {
         this.success = code.success;
         this.code = code.code;
         this.message = code.message;
         this.data = data;
     }
 
-    public Result(Integer code,String message,boolean success) {
+    public Result(Integer code, String message, boolean success) {
         this.code = code;
         this.message = message;
         this.success = success;
     }
 
-    public static Result SUCCESS(){
+    public static Result SUCCESS() {
         return new Result(ResultCode.SUCCESS);
     }
 
-    public static Result ERROR(){
+    public static Result ERROR() {
         return new Result(ResultCode.SERVER_ERROR);
     }
 
-    public static Result FAIL(){
+    public static Result FAIL() {
         return new Result(ResultCode.FAIL);
     }
 }
