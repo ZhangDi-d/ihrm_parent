@@ -14,7 +14,6 @@ public class BaseController {
 
     /**
      * @ModelAttribute最主要的作用是将数据添加到模型对象中，用于视图页面展示时使用。 @ModelAttribute等价于 model.addAttribute(" attributeName ", abc);
-     *
      */
     @ModelAttribute
     public void setResAndReq(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, String companyId, String companyName) {
