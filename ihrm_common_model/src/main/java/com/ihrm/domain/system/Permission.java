@@ -16,8 +16,8 @@ import java.io.Serializable;
 @Getter
 @Setter
 @NoArgsConstructor
-@DynamicInsert(true)
-@DynamicUpdate(true)
+@DynamicInsert(true)    //设置为true,表示insert对象的时候,生成动态的insert语句,如果这个字段的值是null就不会加入到insert语句当中.默认false。
+@DynamicUpdate(true)  //设置为true,表示update对象的时候,生成动态的update语句,如果这个字段的值是null就不会被加入到update语句中,默认false。
 public class Permission implements Serializable {
     private static final long serialVersionUID = -4990810027542971546L;
     /**
@@ -43,7 +43,7 @@ public class Permission implements Serializable {
 
     private String pid;
 
-    private Integer enVisible;
+    private String enVisible;
 
     public Permission(String name, Integer type, String code, String description) {
         this.name = name;

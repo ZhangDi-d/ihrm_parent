@@ -16,4 +16,8 @@ public interface UserService {
     public void deleteById(String id);
 
     public Page<User> findAll(Map<String, Object> paramsmap, int page, int size);
+
+    void assignRoles(String userId, List<String> roleIds);
+
+    User findByMobile(String mobile);
 }
