@@ -92,6 +92,15 @@ public class User implements Serializable {
 
     private String departmentName;
 
+    /**
+     * level
+     *  String
+     *      saasAdmin:
+     *      coAdmin:
+     *      user : 需要分配角色
+     */
+    private String  level;
+
 
     @ManyToMany //用户和角色是多对多关系
     @JsonIgnore // 在实体类向前台返回数据时用来忽略不想传递给前台的属性或接口

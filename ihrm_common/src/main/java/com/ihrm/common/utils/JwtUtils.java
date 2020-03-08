@@ -8,13 +8,15 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.Map;
 
+@Component
 @Getter
 @Setter
-//@ConfigurationProperties("jwt.config")
+@ConfigurationProperties("jwt.config")
 public class JwtUtils {
     //签名私钥
     private String key;
@@ -41,8 +43,7 @@ public class JwtUtils {
         }
         jwtBuilder.setExpiration(new Date(exp));
         //4.创建token
-        String token = jwtBuilder.compact();
-        return token;
+        return jwtBuilder.compact();
     }
 
 
@@ -50,8 +51,7 @@ public class JwtUtils {
      * 解析token字符串获取clamis
      */
     public Claims parseJwt(String token) {
-        Claims claims = Jwts.parser().setSigningKey(key).parseClaimsJws(token).getBody();
-        return claims;
+        return Jwts.parser().setSigningKey(key).parseClaimsJws(token).getBody();
     }
 
 }
